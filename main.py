@@ -113,7 +113,7 @@ class Teacher:
                 "phone no" : ph_no,
                 "Marks" : marks
                 }
-        
+      #  dfdsfsfds
         all_records = []
         try:
             with open("data/student.json", "r") as file:
