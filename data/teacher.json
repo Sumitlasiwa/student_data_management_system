@@ -1,42 +1,18 @@
 [
     {
-        "Name": "Sushil",
-        "Id": 311,
-        "Subject": "Python",
-        "address": "bkt",
-        "email": "sushil@gmail.com",
-        "phone no": "9811459611"
+        "Name": "Dsds",
+        "Id": 2322,
+        "Subject": "dfs",
+        "address": "dfs@fds.in",
+        "email": "fsd@jl.in",
+        "phone no": "0876543211"
     },
     {
-        "Name": "Dinesh",
-        "Id": 1,
-        "Subject": "TOC",
-        "address": "bkt",
-        "email": "gothedinesh@gmail.com",
-        "phone no": "9811330121"
-    },
-    {
-        "Name": "Ramesh",
-        "Id": 432,
+        "Name": "Rabin",
+        "Id": 121,
         "Subject": "Maths",
-        "address": "ktm",
-        "email": "ramesh@gmail.com",
-        "phone no": "0881347784"
-    },
-    {
-        "Name": "Rama",
-        "Id": 3211,
-        "Subject": "maths",
         "address": "bkt",
-        "email": "rama@gmail.com",
-        "phone no": "1234567890"
-    },
-    {
-        "Name": "Hari",
-        "Id": 3112,
-        "Subject": "cpp",
-        "address": "ktm",
-        "email": "hari@gmail.com",
-        "phone no": "1234567890"
+        "email": "rabin@gmail.com",
+        "phone no": "9881459601"
     }
 ]

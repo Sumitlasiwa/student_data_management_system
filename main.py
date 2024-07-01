@@ -1,11 +1,7 @@
 import json
-# import os
-# import sys
-# if __name__=="__main__":
-#     current_dir = os.path.dirname(os.path.abspath(__file__))
-#     sys.path.append(os.path.join(current_dir,"src"))
 
 from src import *
+from src import read_write_json 
 
 class Teacher:
     
@@ -32,13 +28,10 @@ class Teacher:
         while len(ph_no) != 10:
             print("Invalid phone number!")
             ph_no = input("Enter phone no: ")
-            
-        list_of_each = []
-        try:
-            with open("data/teacher.json", "r") as file:
-                list_of_each = json.load(file)
-        except:
-            pass
+
+        list_of_each = []  
+        list_of_each = read_write_json.read_from_json_file("data/teacher.json", list_of_each)
+        
         dict_teacher_record = {"Name" : name,
                             "Id" : id,
                             "Subject" : subject,
@@ -47,9 +40,8 @@ class Teacher:
                             "phone no" : ph_no}
         
         list_of_each.append(dict_teacher_record)
-        
-        with open("data/teacher.json", "w") as file:
-            json.dump(list_of_each, file, indent=4)
+    
+        read_write_json.write_to_json_file("data/teacher.json", list_of_each)
 
     def login_as_teacher():
         """if this function returns True
@@ -61,11 +53,9 @@ class Teacher:
         id = int(input("Enter Id: "))
 
         bool_found = False
-        try:     #to handle empty file error
-            with open("data/teacher.json", "r") as file:
-                teacher_records = json.load(file)
-        except:
-            bool_isempty = True
+
+        teacher_records = []
+        teacher_records = read_write_json.read_from_json_file("data/teacher.json", teacher_records)
 
         for each_teacher_record in teacher_records:
 
@@ -113,19 +103,13 @@ class Teacher:
                 "phone no" : ph_no,
                 "Marks" : marks
                 }
-      #  dfdsfsfds
+        
         all_records = []
-        try:
-            with open("data/student.json", "r") as file:
-                all_records = json.load(file)
-        except:
-            pass
+        all_records = read_write_json.read_from_json_file("data/teacher.json", all_records)
         
         all_records.append(dict1)
 
-        with open("data/student.json", "w") as file:
-            json.dump(all_records, file, indent = 4)
-
+        read_write_json.write_to_json_file("data/teacher.json", all_records)
 
     def display_all():
         """This function displays 
@@ -133,16 +117,11 @@ class Teacher:
             of all the students in student database
             This function can only be accessed by teacher
         """
-        all_students = []
-        is_empty = False    
+        all_students = []  
         try:  
             with open("data/student.json", "r")  as file:
                 all_students = json.load(file)
-
         except:
-            is_empty = True
-
-        if is_empty:
             print("File is empty!")
         else:
             print("===============RECORD OF ALL STUDENTS (GENERAL)==============")
@@ -172,12 +151,10 @@ class Teacher:
                 all_records = json.load(file)
         except:
             is_empty = True
+            print("Database is empty!")
 
         Not_found = True
-        if is_empty:
-            print("Database is empty!")
-        
-        else:
+        if not is_empty:
             for each_student in all_records:
                 if each_student["Name"] == name and each_student["roll"] == roll:
                     print(f"===========DETAILS OF {name.upper()}==============")
@@ -227,7 +204,7 @@ class Teacher:
         all_records = []
         is_empty = False
         try:
-            with open("data/student.json") as file:
+            with open("data/student.json", "r") as file:
                 all_records = json.load(file)
         except:
             is_empty = True
@@ -246,8 +223,7 @@ class Teacher:
             if NotFound:
                 print("SEARCHED STUDENT NOT FOUND!")
 
-        with open("data/student.json", "w") as file:
-            json.dump(all_records, file, indent = 4)
+        read_write_json.write_to_json_file("data/student.json", all_records)
 
     def teacher_functions():
         """All the functions that can be accessed
@@ -291,11 +267,7 @@ class Student:
         bool_found = False
 
         student_records = []
-        try:
-            with open("data/student.json", "r") as file:
-                student_records = json.load(file)
-        except:
-            pass
+        student_records = read_write_json.read_from_json_file("data/student.json", student_records)
 
         for each_student_record in student_records:
 
