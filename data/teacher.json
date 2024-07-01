@@ -1,18 +1,10 @@
 [
     {
-        "Name": "Dsds",
-        "Id": 2322,
-        "Subject": "dfs",
-        "address": "dfs@fds.in",
-        "email": "fsd@jl.in",
-        "phone no": "0876543211"
-    },
-    {
-        "Name": "Rabin",
-        "Id": 121,
-        "Subject": "Maths",
+        "Name": "Sushil",
+        "Id": 1,
+        "Subject": "python",
         "address": "bkt",
-        "email": "rabin@gmail.com",
-        "phone no": "9881459601"
+        "email": "jl@jl.com",
+        "phone no": "1234567890"
     }
 ]

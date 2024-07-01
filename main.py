@@ -1,7 +1,14 @@
 import json
+import os
+import sys
+
+if __name__== "__main__":
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.append(os.path.join(current_dir, "src"))
 
 from src import *
-from src import read_write_json 
+# from src import read_write_json
+
 
 class Teacher:
     
@@ -11,7 +18,7 @@ class Teacher:
         name = input("Enter name: ").capitalize()
         id = int(input("Enter id: "))
 
-        while repeated_record.isrepeated(id):
+        while repeated_record.isrepeated("Id",id):
             print("The person with this id already exists!")
             id = int(input("Enter id: "))
 
@@ -73,9 +80,9 @@ class Teacher:
         name = input("Enter name: ").capitalize()
         roll = int(input("Enter roll no: "))
 
-        while repeated_record.isrepeated(roll):
+        while repeated_record.isrepeated("roll", roll):
             print("The student with this roll no already exists!")
-            id = int(input("Enter roll no: "))
+            roll = int(input("Enter roll no: "))
 
         email = input("Enter email: ")
 
@@ -105,11 +112,11 @@ class Teacher:
                 }
         
         all_records = []
-        all_records = read_write_json.read_from_json_file("data/teacher.json", all_records)
+        all_records = read_write_json.read_from_json_file("data/student.json", all_records)
         
         all_records.append(dict1)
 
-        read_write_json.write_to_json_file("data/teacher.json", all_records)
+        read_write_json.write_to_json_file("data/student.json", all_records)
 
     def display_all():
         """This function displays 
@@ -126,10 +133,13 @@ class Teacher:
         else:
             print("===============RECORD OF ALL STUDENTS (GENERAL)==============")
             for each_student in all_students:
-                list_of_each = list(each_student.items())
-                dict_of_each = dict(list_of_each[:3])
-                for key, value in dict_of_each.items():
-                    print(f"{key} : {value}")
+                print("Name : " + each_student["Name"])
+                print("roll.no : " + str(each_student["roll"]))
+                print("email : " + each_student["email"])
+                # list_of_each = list(each_student.items())
+                # dict_of_each = dict(list_of_each[:3])
+                # for key, value in dict_of_each.items():
+                #     print(f"{key} : {value}")
                     
                 print("---------------------------------------------")
 

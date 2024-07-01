@@ -1,0 +1,50 @@
+[
+    {
+        "Name": "Sumit",
+        "roll": 41,
+        "email": "las@jk.com",
+        "address": "bkt",
+        "phone no": "9881347765",
+        "Marks": [
+            82,
+            93,
+            82
+        ]
+    },
+    {
+        "Name": "Hari",
+        "roll": 31,
+        "email": "jl@jlk.com",
+        "address": "bkt",
+        "phone no": "9881457752",
+        "Marks": [
+            673,
+            63,
+            53
+        ]
+    },
+    {
+        "Name": "Rama",
+        "roll": 21,
+        "email": "jl@jl.com",
+        "address": "bkt",
+        "phone no": "0987654321",
+        "Marks": [
+            63,
+            67,
+            84
+        ]
+    },
+    {
+        "Name": "Shyam",
+        "roll": 42,
+        "email": "sjfk@jk.com",
+        "address": "bkt",
+        "phone no": "1234567890",
+        "Marks": [
+            73,
+            63,
+            95
+        ]
+    }
+]
